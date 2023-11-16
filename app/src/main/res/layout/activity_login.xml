@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="JBUS\n🚌"
+        android:textSize="48sp"
+        android:textColor="@color/black" />
+    <LinearLayout
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
+            android:hint="Email Anda"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="monospace"
+            android:hint="Password Anda"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/tombol_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp"
+            android:text="Masuk"
+            android:textAllCaps="false"
+            app:cornerRadius="10dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal_200" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="Tidak punya akun?"
+            android:textAlignment="center"
+            android:textColor="#FF5733" />
+
+        <TextView
+            android:id="@+id/daftar_sekarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="Daftar Sekarang"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#746AB0"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

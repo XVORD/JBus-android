@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5CDB95"
     tools:context=".LoginActivity"
     android:gravity="center"
     android:orientation="vertical">
@@ -13,9 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="JBUS\n🚌"
-        android:textSize="48sp"
-        android:textColor="@color/black" />
+        android:fontFamily="monospace"
+        android:text="JBUS - Christopher\n🚌"
+        android:textSize="35sp"
+        android:textColor="#EDF5E1" />
     <LinearLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
@@ -52,7 +54,7 @@
             android:textAllCaps="false"
             app:cornerRadius="10dp"
             android:textColor="@color/white"
-            android:backgroundTint="@color/teal_200" />
+            android:backgroundTint="#05386B" />
 
         <TextView
             android:layout_width="match_parent"
@@ -63,7 +65,7 @@
             android:paddingTop="10dp"
             android:text="Tidak punya akun?"
             android:textAlignment="center"
-            android:textColor="#FF5733" />
+            android:textColor="#379683" />
 
         <TextView
             android:id="@+id/daftar_sekarang"
@@ -72,11 +74,12 @@
             android:layout_marginHorizontal="20dp"
             android:fontFamily="monospace"
             android:gravity="center"
+            android:backgroundcolor="#05696B"
             android:paddingHorizontal="16dp"
             android:text="Daftar Sekarang"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#746AB0"
+            android:textColor="#EDF5E1"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

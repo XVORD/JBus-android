@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#5CDB95"
-    tools:context=".LoginActivity"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:fontFamily="monospace"
+        android:gravity="center"
         android:text="JBUS - Christopher\n🚌"
-        android:textSize="35sp"
-        android:textColor="#EDF5E1" />
+        android:textColor="#3C5516"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#7E2D2D"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textColor="#EDF5E1"
+        android:textSize="35sp" />
+
     <LinearLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/Email"
@@ -39,22 +51,22 @@
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
             android:hint="Password Anda"
-            android:inputType="textPassword"
-            android:layout_marginBottom="20dp" />
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/tombol_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#05386B"
             android:paddingHorizontal="20dp"
             android:paddingVertical="14dp"
             android:text="Masuk"
             android:textAllCaps="false"
-            app:cornerRadius="10dp"
             android:textColor="@color/white"
-            android:backgroundTint="#05386B" />
+            app:cornerRadius="10dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -74,7 +86,6 @@
             android:layout_marginHorizontal="20dp"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:backgroundcolor="#05696B"
             android:paddingHorizontal="16dp"
             android:text="Daftar Sekarang"
             android:textAlignment="center"

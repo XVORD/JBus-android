@@ -1,4 +1,4 @@
-package com.netlabJBus.jbus_android.model;
+package com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.model;
 
 public class Station extends Serializable {
     public String stationName;

@@ -1,4 +1,4 @@
-package com.netlabJBus.jbus_android.model;
+package com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.model;
 public enum BusType {
     REGULER,
     DOUBLE_DECKER,

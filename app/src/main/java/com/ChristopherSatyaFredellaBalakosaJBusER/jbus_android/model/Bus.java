@@ -1,4 +1,4 @@
-package com.netlabJBus.jbus_android.model;
+package com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.model;
 
 import androidx.annotation.NonNull;
 

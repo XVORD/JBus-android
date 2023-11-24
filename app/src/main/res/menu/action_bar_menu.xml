@@ -12,13 +12,11 @@
         android:id="@+id/profile_account"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile Account"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
 
     <item
         android:id="@+id/payment_checker"
         android:icon="@drawable/ic_baseline_payment_24"
         android:title="Payment"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
 </menu>

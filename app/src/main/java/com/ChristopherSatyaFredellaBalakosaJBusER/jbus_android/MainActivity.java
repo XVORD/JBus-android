@@ -2,7 +2,7 @@ package com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.netlabJBus.jbus_android.model.Bus;
+import com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.model.Bus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;

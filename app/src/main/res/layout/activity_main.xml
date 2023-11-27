@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="🚌💨"
@@ -20,7 +20,7 @@
     <ListView
         android:id="@+id/listview_main"
         android:layout_width="match_parent"
-        android:layout_height="573dp" />
+        android:layout_height="361dp" />
     <LinearLayout
         android:id="@+id/pagination_footer"
         android:layout_width="match_parent"

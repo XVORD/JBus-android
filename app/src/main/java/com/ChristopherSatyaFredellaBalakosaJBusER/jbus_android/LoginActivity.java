@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         daftar_sekarang = findViewById(R.id.daftar_sekarang);
         tombol_login = findViewById(R.id.tombol_login);
+        email = findViewById(R.id.Email);
+        password = findViewById(R.id.Password);
 
         tombol_login.setOnClickListener(v -> handleLogin());
         daftar_sekarang.setOnClickListener(v-> {

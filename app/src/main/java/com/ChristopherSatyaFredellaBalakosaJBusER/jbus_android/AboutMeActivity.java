@@ -5,8 +5,10 @@ import static com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.LoginActiv
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.TextKeyListener;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +23,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AboutMeActivity extends AppCompatActivity {
-    private TextView initial,username,email,balance, TopUp, tombol_topup = null;
+    private TextView initial,username,email,balance, TopUp, tombol_topup, not_Registered, textview_not, textview_yes= null;
+    private Button Registered = null;
     private BaseApiService mApiService;
     private Context mContext;
     @Override
@@ -35,14 +38,41 @@ public class AboutMeActivity extends AppCompatActivity {
         initial = findViewById(R.id.initial);
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
+
         balance = findViewById(R.id.balance);
-        TopUp = findViewById(R.id.TopUP);
+        TopUp = findViewById(R.id.TopUp);
         tombol_topup = findViewById(R.id.tombol_topup);
         tombol_topup.setOnClickListener(v -> handleTopup());
+
         username.setText(loggedAccount.name);
         email.setText(loggedAccount.email);
+
         Double strdouble = new Double(loggedAccount.balance);
         balance.setText(strdouble.toString());
+
+        not_Registered = findViewById(R.id.not_Registered);
+        textview_not = findViewById(R.id.textview_not);
+        Registered = findViewById(R.id.Registered);
+        textview_yes = findViewById(R.id.textview_yes);
+
+        if(loggedAccount.company == null){
+            not_Registered.setVisibility(View.VISIBLE);
+            textview_not.setVisibility(View.VISIBLE);
+            Registered.setVisibility(View.INVISIBLE);
+            textview_yes.setVisibility(View.INVISIBLE);
+            not_Registered.setOnClickListener(v-> {moveActivity(this, RegisterRenterActivity.class);});
+        }
+        if (loggedAccount.company != null){
+            Registered.setVisibility(View.VISIBLE);
+            textview_yes.setVisibility(View.VISIBLE);
+            not_Registered.setVisibility(View.INVISIBLE);
+            textview_not.setVisibility(View.INVISIBLE);
+            Registered.setOnClickListener(v-> {moveActivity(this, ManageBusActivity.class);});
+        }
+    }
+    private void moveActivity(Context ctx, Class<?> cls){
+        Intent intent = new Intent(ctx, cls);
+        startActivity(intent);
     }
     protected void handleTopup() {
         String topUpS = TopUp.getText().toString();
@@ -73,5 +103,9 @@ public class AboutMeActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "Problem with the server", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    protected void handleRenter(){
+
     }
 }

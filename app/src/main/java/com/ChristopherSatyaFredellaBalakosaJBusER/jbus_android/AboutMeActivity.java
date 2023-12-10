@@ -22,58 +22,69 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * AboutMeActivity Class
+ * Activity which contains information of the account used when logging in,as well as implementing related methods such as top up and register renter.
+ * @author Christopher Satya
+ */
 public class AboutMeActivity extends AppCompatActivity {
-    private TextView initial,username,email,balance, TopUp, tombol_topup, not_Registered, textview_not, textview_yes= null;
-    private Button Registered = null;
+    private TextView initial,username,email,balance, TopUp, not_Registered, textview_yes;
+    private Button Registered, tombol_topup;
     private BaseApiService mApiService;
     private Context mContext;
+    /**
+     * Initializes and sets up the UI components for the About Me activity.
+     * @param savedInstanceState The saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_me);
-
+        getSupportActionBar().hide();
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        initial = findViewById(R.id.initial);
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
+        initial = findViewById(R.id.initial);
+
 
         balance = findViewById(R.id.balance);
         TopUp = findViewById(R.id.TopUp);
         tombol_topup = findViewById(R.id.tombol_topup);
         tombol_topup.setOnClickListener(v -> handleTopup());
 
-        username.setText(loggedAccount.name);
-        email.setText(loggedAccount.email);
-
-        Double strdouble = new Double(loggedAccount.balance);
-        balance.setText(strdouble.toString());
 
         not_Registered = findViewById(R.id.not_Registered);
-        textview_not = findViewById(R.id.textview_not);
         Registered = findViewById(R.id.Registered);
         textview_yes = findViewById(R.id.textview_yes);
+        handleRefreshAccount();
 
-        if(loggedAccount.company == null){
-            not_Registered.setVisibility(View.VISIBLE);
-            textview_not.setVisibility(View.VISIBLE);
-            Registered.setVisibility(View.INVISIBLE);
-            textview_yes.setVisibility(View.INVISIBLE);
-            not_Registered.setOnClickListener(v-> {moveActivity(this, RegisterRenterActivity.class);});
-        }
-        if (loggedAccount.company != null){
-            Registered.setVisibility(View.VISIBLE);
-            textview_yes.setVisibility(View.VISIBLE);
-            not_Registered.setVisibility(View.INVISIBLE);
-            textview_not.setVisibility(View.INVISIBLE);
-            Registered.setOnClickListener(v-> {moveActivity(this, ManageBusActivity.class);});
-        }
+        tombol_topup.setOnClickListener(v->{
+            handleTopup();
+
+        });
+        not_Registered.setOnClickListener(v->moveActivity(this, RegisterRenterActivity.class));
+
+        Registered.setOnClickListener(v->moveActivity(this, ManageBusActivity.class));
     }
+    /**
+     * Navigates to another activity based on the provided class.
+     * @param ctx The current context.
+     * @param cls The target activity class.
+     */
     private void moveActivity(Context ctx, Class<?> cls){
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);
     }
+
+    @Override
+    public <T extends View> T findViewById(int id) {
+        return super.findViewById(id);
+    }
+    /**
+     * Handles the top-up functionality for the user's account balance.
+     */
     protected void handleTopup() {
         String topUpS = TopUp.getText().toString();
         if (topUpS.isEmpty()) {
@@ -104,8 +115,36 @@ public class AboutMeActivity extends AppCompatActivity {
             }
         });
     }
-
-    protected void handleRenter(){
-
+    /**
+     * Refreshes and displays the user's account information, including balance, email, and registration status.
+     */
+    protected void handleRefreshAccount() {
+        BaseApiService mApiService = UtilsApi.getApiService();
+        mApiService.getAccountbyId(LoginActivity.loggedAccount.id).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(mContext, "App error", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                initial.setText(""+loggedAccount.name.toUpperCase().charAt(0));
+                username.setText(loggedAccount.name);
+                email.setText(loggedAccount.email);
+                balance.setText("IDR "+loggedAccount.balance);
+                if (loggedAccount.company == null) {
+                    textview_yes.setText("You're not registered as a renter");
+                    Registered.setVisibility(View.INVISIBLE);
+                    not_Registered.setVisibility(View.VISIBLE);
+                } else {
+                    textview_yes.setText("You're already registered as a renter");
+                    Registered.setVisibility(View.VISIBLE);
+                    not_Registered.setVisibility(View.INVISIBLE);
+                }
+            }
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                // do something
+            }
+        });
     }
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/registerrenterback"
     android:orientation="vertical"
     tools:context=".RegisterRenterActivity">
 
@@ -12,8 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="monospace"
+        android:layout_marginTop="60dp"
         android:text="Register Your Company"
-        android:textColor="@color/black"
+        android:textColor="#BD8A3C"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -23,8 +26,8 @@
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="Input company name, address, and phone number"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textColor="#BD8A3C"
+        android:textSize="15sp" />
 
     <LinearLayout
         android:id="@+id/register_renter_form"
@@ -40,6 +43,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
+            android:background="@drawable/edit_round"
+            android:drawableLeft="@drawable/baseline_business_24"
+            android:paddingLeft="10dp"
+            android:textColor="#BD8A3C"
+            android:drawablePadding="10dp"
+            android:textColorHint="#BD8A3C"
             android:hint="Company Name"
             android:inputType="textEmailAddress" />
 
@@ -47,25 +56,36 @@
             android:id="@+id/Address"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/edit_round"
+            android:drawableLeft="@drawable/baseline_map_24"
+            android:paddingLeft="10dp"
+            android:textColor="#BD8A3C"
+            android:textColorHint="#BD8A3C"
+            android:drawablePadding="10dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
-            android:hint="Address"
-            android:inputType="textPassword" />
+            android:hint="Address"/>
 
         <EditText
             android:id="@+id/Phone_Number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/edit_round"
+            android:drawableLeft="@drawable/baseline_phone_24"
+            android:paddingLeft="10dp"
+            android:drawablePadding="10dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
+            android:textColor="#BD8A3C"
+            android:textColorHint="#BD8A3C"
             android:hint="Phone Number"
-            android:inputType="number" />
+            android:inputType="phone" />
 
         <Button
             android:id="@+id/tombol_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#05386B"
+            android:backgroundTint="#BD8A3C"
             android:paddingHorizontal="20dp"
             android:paddingVertical="14dp"
             android:text="Register"

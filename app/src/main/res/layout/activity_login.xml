@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5CDB95"
+    android:background="@drawable/mainbackground"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -15,20 +15,21 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="JBUS - Christopher\n🚌"
-        android:textColor="#3C5516"
-        android:textSize="35sp" />
+        android:layout_marginTop="@android:dimen/thumbnail_height"
+        android:text="JBUS Bikun"
+        android:textColor="#BD8A3C"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#7E2D2D"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Welcome"
-        android:textColor="#EDF5E1"
-        android:textSize="35sp" />
+        android:text="Selamat Datang Di Bus Kuning UWIW"
+        android:textColor="#BD8A3C"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/login_form"
@@ -43,30 +44,45 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_round"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawablePadding="10dp"
             android:fontFamily="monospace"
-            android:hint="Email Anda"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/email_anda"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            android:textColor="#BD8A3C"
+            android:textColorHint="#BD8A3C"
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_round"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawablePadding="10dp"
             android:fontFamily="monospace"
-            android:hint="Password Anda"
-            android:inputType="textPassword" />
+            android:hint="@string/password_anda"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textColor="#BD8A3C"
+            android:textColorHint="#BD8A3C"
+            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
 
         <Button
             android:id="@+id/tombol_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#05386B"
+            android:backgroundTint="#BD8A3C"
             android:paddingHorizontal="20dp"
             android:paddingVertical="14dp"
             android:text="Masuk"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:cornerRadius="10dp" />
+            app:cornerRadius="10dp"
+            tools:ignore="VisualLintButtonSize" />
 
         <TextView
             android:layout_width="match_parent"
@@ -74,10 +90,10 @@
             android:layout_marginHorizontal="20dp"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:paddingTop="10dp"
-            android:text="Tidak punya akun?"
+            android:paddingTop="12dp"
+            android:text="@string/tidak_punya_akun"
             android:textAlignment="center"
-            android:textColor="#379683" />
+            android:textColor="#BD8A3C" />
 
         <TextView
             android:id="@+id/daftar_sekarang"
@@ -90,7 +106,7 @@
             android:text="Daftar Sekarang"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#EDF5E1"
+            android:textColor="#BD8A3C"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

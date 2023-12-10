@@ -18,7 +18,13 @@ import com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.request.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/**
+ * LoginActivity Class
+ * Represents the login screen of the JBusER Android application.
+ * Users can enter their email and password to log in or navigate to the registration screen.
+ * Upon successful login, users are redirected to the main screen of the application.
+ * @author Christopher Satya
+ */
 public class LoginActivity extends AppCompatActivity {
     private BaseApiService mApiService;
     private Context mContext;
@@ -26,6 +32,12 @@ public class LoginActivity extends AppCompatActivity {
     public static Account loggedAccount;
     private TextView daftar_sekarang = null;
     private Button tombol_login = null;
+    // Fields and methods of the LoginActivity class...
+
+    /**
+     * Initializes the activity and sets up the user interface components.
+     * @param savedInstanceState The saved state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         tombol_login = findViewById(R.id.tombol_login);
         email = findViewById(R.id.Email);
         password = findViewById(R.id.Password);
+        //email.text.setTextColor(R.color.black);
 
         tombol_login.setOnClickListener(v -> handleLogin());
         daftar_sekarang.setOnClickListener(v-> {
@@ -44,6 +57,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    /**
+     * Navigates to the specified activity class.
+     * @param ctx The context of the current activity.
+     * @param cls The class of the activity to navigate to.
+     */
     private void moveActivity(Context ctx, Class<?> cls){
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);
@@ -51,6 +69,10 @@ public class LoginActivity extends AppCompatActivity {
     private void viewToast(Context ctx, String message){
         Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show();
     }
+    /**
+     * Handles the login process when the login button is clicked.
+     * It sends a login request to the server and handles the response.
+     */
     protected void handleLogin() {
         String emailS = email.getText().toString();
         String passwordS = password.getText().toString();

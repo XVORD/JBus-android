@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9999"
+    android:background="@drawable/registerbackground"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
@@ -22,9 +22,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
+            android:textStyle="bold"
             android:gravity="center"
             android:text="Register your account"
-            android:textColor="#3C5516"
+            android:textColor="#BD8A3C"
             android:textSize="25sp" />
 
         <TextView
@@ -35,8 +36,8 @@
             android:fontFamily="monospace"
             android:gravity="center"
             android:text="Input username and password"
-            android:textColor="#3C5516"
-            android:textSize="15sp" />
+            android:textColor="#BD8A3C"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,6 +51,12 @@
             android:id="@+id/Username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:drawableLeft="@drawable/baseline_person2_24"
+            android:paddingLeft="10dp"
+            android:textColor="#BD8A3C"
+            android:textColorHint="#BD8A3C"
+            android:background="@drawable/edit_round"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="monospace"
             android:hint="Username"
@@ -60,27 +67,39 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edit_round"
+            android:drawablePadding="10dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
             android:hint="Email Anda"
+            android:textColorHint="#BD8A3C"
+            android:textColor="#BD8A3C"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edit_round"
+            android:drawablePadding="10dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="monospace"
             android:hint="Password Anda"
+            android:textColorHint="#BD8A3C"
+            android:textColor="#BD8A3C"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/tombol_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#05386B"
             android:paddingHorizontal="20dp"
             android:paddingVertical="14dp"
+            android:backgroundTint="#BD8A3C"
             android:text="Register"
             android:textAllCaps="false"
             android:textColor="@color/white"

@@ -5,9 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/aboutmeback"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".AboutMeActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/initial"
@@ -15,7 +22,7 @@
         android:layout_height="96dp"
         android:layout_marginVertical="24dp"
         android:background="@drawable/circle"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="#BD8A3C"
         android:gravity="center"
         android:text="C"
         android:textColor="@color/white"
@@ -40,6 +47,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:textColor="#BD8A3C"
                 android:text="USERNAME" />
 
             <TextView
@@ -48,8 +58,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                tools:text="-" />
+                android:textColor="#BD8A3C"
+                android:textStyle="bold"
+                tools:text="-"
+                tools:ignore="RtlHardcoded" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,7 +74,10 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:fontFamily="monospace"
                 android:textSize="16sp"
+                android:textColor="#BD8A3C"
+                android:textStyle="bold"
                 android:text="EMAIL" />
 
             <TextView
@@ -70,8 +85,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:textColor="#BD8A3C"
+                android:textStyle="bold"
                 android:textSize="16sp"
-                android:textColor="@color/black"
                 tools:text="-" />
         </LinearLayout>
 
@@ -86,6 +102,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textSize="16sp"
+                android:textColor="#BD8A3C"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
                 android:text="BALANCE" />
 
             <TextView
@@ -93,16 +112,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:textColor="#BD8A3C"
+                android:textStyle="bold"
                 android:textSize="16sp"
-                android:textColor="@color/black"
                 tools:text="-" />
+            </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="0dp">
 
             <EditText
                 android:id="@+id/TopUp"
@@ -111,21 +133,32 @@
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
+                android:background="@drawable/edit_round"
+                android:paddingLeft="10dp"
+                android:textColor="#BD8A3C"
+                android:drawablePadding="10dp"
                 android:layout_marginBottom="20dp"
+                android:textColorHint="#BD8A3C"
                 android:hint="Top Up Amount"
-                android:inputType="number" />
+                android:inputType="number"
+                tools:ignore="VisualLintTextFieldSize" />
             <Button
                 android:id="@+id/tombol_topup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:backgroundTint="#BD8A3C"
                 android:text="TOP UP"
                 android:textAllCaps="false"
                 app:cornerRadius="21dp"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/black"/>
-        </LinearLayout>
+                android:textColor="@color/white"/>
     </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginVertical="36dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,57 +167,43 @@
         android:padding="30dp">
 
         <TextView
-        android:id="@+id/textview_yes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:textSize="10sp"
-        tools:text="You're Already Registered As A Renter" />
+            android:id="@+id/textview_yes"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:textColor="#BD8A3C"
+            android:textSize="10sp"
+            tools:text="You're Not Registered As A Renter" />
 
         <TextView
             android:id="@+id/not_Registered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="monospace"
             android:gravity="center_horizontal"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="#BD8A3C"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="Register Your Company" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="30dp">
-
-        <TextView
-            android:id="@+id/textview_not"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:textSize="10sp"
-            tools:text="You're Not Registered As A Renter" />
+            android:layout_marginBottom="2dp"
+            android:text="Register Your Company" />
 
         <Button
             android:id="@+id/Registered"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#05386B"
+            android:layout_gravity="center"
+            android:backgroundTint="#BD8A3C"
             android:paddingHorizontal="20dp"
             android:paddingVertical="10dp"
             android:text="Manage Bus"
-            android:textAllCaps="false"
             android:textColor="@color/white"
             app:cornerRadius="10dp" />
 
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

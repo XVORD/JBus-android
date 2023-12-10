@@ -16,17 +16,25 @@ import com.ChristopherSatyaFredellaBalakosaJBusER.jbus_android.request.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/**
+ * RegisterActivity Class
+ * It is an Android activity responsible for user registration within the JBus Android application.
+ * @author Christopher Satya
+ */
 public class RegisterActivity extends AppCompatActivity {
     private BaseApiService mApiService;
     private Context mContext;
     private EditText name, email, password;
     private Button registerButton = null;
-
+    /**
+     * Initializes the activity and sets up the user interface components.
+     * @param savedInstanceState The saved state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().hide();
         mContext = this;
         mApiService = UtilsApi.getApiService();
         name = findViewById(R.id.Username);
@@ -36,6 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         registerButton.setOnClickListener(x -> handleRegister());
     }
+    /**
+     * Handles the user registration process by sending a registration request to the server. It retrieves
+     * the user's name, email, and password from the input fields.
+     */
     protected void handleRegister() {
         String nameS = name.getText().toString();
         String emailS = email.getText().toString();
